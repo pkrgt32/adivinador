@@ -2,46 +2,24 @@ let parafo = document.getElementById("respuesta");
 let preguntas = document.getElementById('input');
 
 
-//listas
-const MIENBROS = ["padre", "madre", "hermano", "hermana", "tio", "tia", "primo", "prima", "abuelo", "abuela", "bisabuelo", "bisabuela", "sobrina", "sobrino", "hermanastra", "hermanastro", "padrastro", "madrastra", "novia", "novio", "esposo", "esposa", "bebe", "suegro", "suegra", "nuera", "yerno", "hijo", "hija", "familia"];
-const MASCOTAS = ["perro", "gato", "peces", "hamster", "pájaros", "ratones", "ratas", "cobayas", "serpientes", "conejo", "tortuga",
-    "hurón", "chinchilla", "dragón barbudo", "loro", "agapornis","mascota"];
-const ANIMALES = ["león", "tigre", "elefante", "rinoceronte", "hipopótamo", "jirafa", "cebra", "oso", "lobo", "zorro", "conejo", "ardilla", "ratón", "ciervo", "canguro", "koala", "panda", "pingüino", "foca", "ballena", "delfín", "tiburón", "pulpo", "medusa", "cangrejo", "langosta", "mariposa", "abeja", "mosquito", "hormiga", "araña", "escorpión", "serpiente", "lagarto", "tortuga", "cocodrilo", "águila", "halcón", "búho", "cuervo", "gorrión", "paloma", "pavo", "gallina", "pato", "cisne", "flamenco", "loro", "canario", "papagayo", "tucán", "colibrí"];
-const LISTA = ["como me llamo", "donde vivo", "donde vivo yo"];
-
-
+let partesDePregunta = ["por que", "como", "cuando",  "Dónde",  "que","por quien","quienes", "cual","quienrs","cuales","cuantos","cuanto","De quién"
+];
 
 const ERROR = /[A-Z!@#$%^&*()_+?<>]/;
 
 
-MIENBROS.forEach((litas) => { //forEach: Este es un método que se utiliza para iterar sobre cada elemento de un array. En este caso, el array es PRUEBA.
-    preguntasNoAptas(litas)
-});
-MASCOTAS.forEach((litas) => { //forEach: Este es un método que se utiliza para iterar sobre cada elemento de un array. En este caso, el array es PRUEBA.
-    preguntasNoAptas(litas)
-});
-ANIMALES.forEach((litas) => { //forEach: Este es un método que se utiliza para iterar sobre cada elemento de un array. En este caso, el array es PRUEBA.
-    preguntasNoAptas(litas)
-});
-function preguntasNoAptas(litas) {
-    LISTA.push(`como se llama mi ${litas}`);
-    LISTA.push(`como se llama el esposo mi ${litas}`);
-    LISTA.push(`donde vive mi ${litas}`);
-    LISTA.push(`donde vive el esposo de mi ${litas}`);
-    LISTA.push(`donde come mi ${litas}`);
-    LISTA.push(`donde come el esposo de mi ${litas}`);
-    LISTA.push(`donde come el ${litas}`);
-    LISTA.push(`donde vive el ${litas}`);
-}
-console.log(LISTA)
+
+
+
 function botonR() {
+    let textod = preguntas.value.trim();
 
     if (preguntas.value == "") {
-        parafo.textContent = "as una pregunta" //             /lista        / verifica el texto del usuario
-    } else if (LISTA.includes(preguntas.value)) { //La función lidts.includes() verifica si un elemento está dentro de una lista.
+        parafo.textContent = "as una pregunta"         
+    } else if (partesDePregunta.some(part => textod.includes(part))){ //`Array.prototype.some()`: Este método prueba si al menos un elemento en el array cumple con la condición implementada por la función proporcionada. En este caso, la función es `(part => textod.startsWith(part))`y.String.prototype.includes()`: es para re si esite alguna palagra en todo el texto del usuario
         parafo.textContent = "no soy tan majico";
         borra()
-    } else if (ERROR.test(preguntas.value)) {
+    }else if (ERROR.test(preguntas.value)) {
         parafo.textContent = "solo puede usar minusculas sin caracteres espesiales";
         borra()
     } else {
