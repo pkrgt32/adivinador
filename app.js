@@ -14,7 +14,7 @@ const ERROR = /[A-Z!@#$%^&*()_+?<>]/;
 
 
 parafo.style.display = "none"
-losdig.style.display = "none"
+//losdig.style.display = "none"
 
 
 
