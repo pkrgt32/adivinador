@@ -18,11 +18,12 @@ losdig.style.display = "none"
 
 
 
+  
 
 
 function botonR() {
     let preguntas = document.getElementById('input'); 
-    let textod = preguntas.value.trim();
+    let textod = preguntas.value.trim().toLowerCase(); // Aquí convertimos el texto a minúsculas
     let parafo = document.getElementById("respuesta");
     
 
@@ -51,11 +52,7 @@ function botonR() {
         borra()
         animacion()
     
-    }else if (ERROR.test(preguntas.value)) {
-        parafo.textContent = "solo puede usar minusculas sin caracteres espesiales";
-        borra()
-        alerta() 
-    } else {
+    }else {
         repuestas()
         animacion()
     }
