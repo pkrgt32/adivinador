@@ -4,7 +4,7 @@ let titulo = document.getElementById("h1");
 let losdig = document.getElementById("losdig")
 
 
-
+//prueba
 let preguNoAptas = ["por que", "como", "cuando",  "dónde",  "que","por quien","quienes", "cual","quienrs","cuales","cuantos","cuanto","de quién"
 ];
 let preguAmables = ["como estas","como te encuentra","como te a ido"]
