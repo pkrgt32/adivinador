@@ -72,8 +72,8 @@ function repuestas() {
         parafo.textContent = "telo por seguro"
         borra();
     }else if (randon == 6) {
-    parafo.textContent = "no"
-    borra();
+        parafo.textContent = "no"
+        borra();
     } else {
         parafo.textContent = "preguntame luego"
         borra();
